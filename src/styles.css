@@ -156,3 +156,15 @@ input[type="number"]::-webkit-inner-spin-button {
     margin-right: 0px;
     max-width: 451px;
 }
+
+/* Animation hamburger icon */
+
+.hamburger-line {
+  background: linear-gradient(90deg, #111, #4ade80, #22d3ee);
+  background-size: 200%;
+  transition: background-position 0.5s ease-in-out;
+}
+
+.group:hover .hamburger-line {
+  background-position: 100%;
+}
