@@ -1,17 +1,15 @@
-require("dotenv").config();
+require('dotenv').config();
+const { Pool } = require('pg');
 
-const mysql = require("mysql2");
+const pool = new Pool({
+  connectionString: process.env.SUPABASE_DB_URL || process.env.DATABASE_URL,
+  max: parseInt(process.env.DATABASE_CONNECTION_LIMIT || '10', 10),
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
 
-try {
-    const pool = mysql.createPool({
-        host: process.env.DATABASE_HOST,
-        user: process.env.DATABASE_USER,
-        password: process.env.DATABASE_PASSWORD,
-        database: process.env.DATABASE_NAME,
-        connectionLimit: process.env.DATABASE_CONNECTION_LIMIT,
-    });
-
-    module.exports = pool;
-} catch (error) {
-    console.log(error);
-}
+module.exports = {
+  query: (text, params) => pool.query(text, params),
+  pool
+};
