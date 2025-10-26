@@ -19,7 +19,7 @@ function Cart() {
     useEffect(() => {
         const fetchProductData = async () => {
             try {
-                const response = await fetch("/api/products");
+                const response = await fetch("/.netlify/functions/products");
                 const data = await response.json();
 
                 setProductData({
