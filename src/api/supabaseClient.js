@@ -1,34 +1,22 @@
 import { createClient } from '@supabase/supabase-js';
 
-export const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_ANON_KEY
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_SERVICE_ROLE_KEY
 );
 
-export async function fetchProducts() {
+export const handler = async () => {
   const { data, error } = await supabase.from('products').select('*');
-  if (error) throw error;
-  return data;
-}
 
-export function subscribeProducts_v1(onEvent) {
-  const subscription = supabase
-    .from('products')
-    .on('*', payload => onEvent(payload))
-    .subscribe();
+  if (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: error.message }),
+    };
+  }
 
-  return subscription;
-}
-
-export function subscribeProducts_v2(onEvent) {
-  const channel = supabase
-    .channel('public:products')
-    .on(
-      'postgres_changes',
-      { event: '*', schema: 'public', table: 'products' },
-      payload => onEvent(payload)
-    )
-    .subscribe();
-
-  return channel;
-}
+  return {
+    statusCode: 200,
+    body: JSON.stringify(data),
+  };
+};
