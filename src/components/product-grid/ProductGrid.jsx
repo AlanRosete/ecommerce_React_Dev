@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import ProductSorting from "./ProductSorting";
 import ProductFiltering from "./ProductFiltering";
-import AddToCartButton from "./addToCartButton";
+import AddToCartButton from "./AddToCartButton.jsx";
 import ProductCounter from "./ProductCounter";
 import StarRatings from "./StarRatings";
 

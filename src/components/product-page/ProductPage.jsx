@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import StarRatings from "../product-grid/StarRatings";
-import AddToCartButton from "./AddToCartButton";
+import AddToCartButton from "./AddToCartButton.jsx";
 
 import { ToastContainer } from "react-toastify";
 import { LazyLoadImage } from "react-lazy-load-image-component";
