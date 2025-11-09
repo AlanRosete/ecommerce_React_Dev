@@ -15,12 +15,12 @@ function ProductPage() {
     useEffect(() => {
         const fetchProductData = async () => {
             try {
-                const response = await fetch(`/api/products/${id}`);
+                const response = await fetch(`/.netlify/functions/products/${id}`);
                 const data = await response.json();
 
                 setProduct(data);
             } catch (error) {
-                console.log("Problem with API connectivity", error);
+                console.warn("Problem with API connectivity", error);
             }
         };
 

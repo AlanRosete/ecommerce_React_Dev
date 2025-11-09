@@ -10,9 +10,7 @@ function RelatedProducts({ category }) {
     useEffect(() => {
         const fetchProductData = async () => {
             try {
-                const response = await fetch(
-                    `/api/products/related/${category}`
-                );
+                const response = await fetch(`/.netlify/functions/products/${category}`);
                 const data = await response.json();
 
                 setProduct({
@@ -20,7 +18,7 @@ function RelatedProducts({ category }) {
                     isDataLoaded: true,
                 });
             } catch (error) {
-                console.log("Problem with API connectivity", error);
+                console.warn("Problem with API connectivity", error);
             }
         };
 
@@ -28,7 +26,6 @@ function RelatedProducts({ category }) {
     }, []);
 
     useEffect(() => {
-        console.log(products);
     }, [products]);
 
     return (
