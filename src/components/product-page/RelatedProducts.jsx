@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import StarRatings from "../product-grid/StarRatings";
+import LoadingModal from "../components-modals/LoadingModal";
 
 function RelatedProducts({ category }) {
     const [products, setProduct] = useState([]);
@@ -82,7 +83,7 @@ function RelatedProducts({ category }) {
                         );
                     })
                 ) : (
-                    <p>Loading...</p>
+                    <LoadingModal isOpen={true}/>
                 )}
             </div>
         </div>

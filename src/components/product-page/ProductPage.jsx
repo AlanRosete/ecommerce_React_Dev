@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastify";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import RelatedProducts from "./RelatedProducts";
+import LoadingModal from "../components-modals/LoadingModal.jsx";
 
 function ProductPage() {
     const [product, setProduct] = useState([]);
@@ -96,7 +97,7 @@ function ProductPage() {
                         );
                     })
                 ) : (
-                    <p>Loading...</p>
+                    <LoadingModal isOpen={true}/>
                 )}
 
                 <ToastContainer />
