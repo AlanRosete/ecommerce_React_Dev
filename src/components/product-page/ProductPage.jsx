@@ -105,9 +105,9 @@ function ProductPage() {
 
             {product.length > 0 ? (
                 <RelatedProducts category={product[0].category} />
-            ) : (
-                <p>Loading...</p>
-            )}
+            ) : 
+            null 
+            }
         </>
     );
 }
