@@ -41,7 +41,7 @@ function ProductPage() {
                                 <div className="flex justify-center">
                                     <LazyLoadImage
                                         effect="blur"
-                                        src={"../" + product.image}
+                                        src={product.image}
                                         alt={product.description}
                                         className=""
                                         wrapperClassName="product-image mb-8 lg:mb-0"

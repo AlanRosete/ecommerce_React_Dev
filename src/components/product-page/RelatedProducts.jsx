@@ -5,13 +5,13 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import StarRatings from "../product-grid/StarRatings";
 import LoadingModal from "../components-modals/LoadingModal";
 
-function RelatedProducts({ category }) {
+function RelatedProducts() {
     const [products, setProduct] = useState([]);
 
     useEffect(() => {
         const fetchProductData = async () => {
             try {
-                const response = await fetch(`/.netlify/functions/products/${category}`);
+                const response = await fetch(`/.netlify/functions/products/`);
                 const data = await response.json();
 
                 setProduct({
@@ -48,7 +48,7 @@ function RelatedProducts({ category }) {
                                 >
                                     <LazyLoadImage
                                         effect="blur"
-                                        src={"../" + product.image}
+                                        src={product.image}
                                         alt={product.description}
                                         className="mb-4 w-full"
                                     />

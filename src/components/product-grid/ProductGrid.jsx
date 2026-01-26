@@ -90,12 +90,12 @@ function ProductGrid({ category }) {
         return setProducts(getCategoryProducts());
     };
 
-const handleMouseEnter = (productId) => {
-        setHoveredProducts((prev) => ({
-            ...prev,
-            [productId]: true,
-        }));
-    };
+    const handleMouseEnter = (productId) => {
+            setHoveredProducts((prev) => ({
+                ...prev,
+                [productId]: true,
+            }));
+        };
 
     const handleMouseLeave = (productId) => {
         setHoveredProducts((prev) => ({
