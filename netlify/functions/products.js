@@ -91,7 +91,7 @@ export const handler = async (event) => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify(mapped),
+      body: JSON.stringify([mapped]),
     };
 
   } catch (error) {

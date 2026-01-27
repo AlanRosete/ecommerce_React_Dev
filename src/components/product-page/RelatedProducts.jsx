@@ -33,7 +33,7 @@ function RelatedProducts() {
         <div className="max-w-screen-2xl mx-auto p-9 pt-2">
             <h2 className="text-3xl text-center m-6">You may also like</h2>
 
-            <div className="flex flex-row justify-start lg:justify-center overflow-scroll">
+            <div className="flex flex-row justify-start overflow-scroll">
                 {products.isDataLoaded ? (
                     products.products.map((product) => {
                         return (
