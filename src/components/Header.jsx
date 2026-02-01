@@ -29,7 +29,7 @@ function App({ navigationItems }) {
                 <div className="flex items-center">
                     <a href="/">
                         <img
-                            src="/public/3034-logo-1739199303.648color-ffa6a6.svg"
+                            src="/3034-logo-1739199303.648color-ffa6a6.svg"
                             className="mr-2"
                             alt="Logo"
                             width={145}
