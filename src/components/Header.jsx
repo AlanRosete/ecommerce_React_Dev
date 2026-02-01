@@ -25,12 +25,12 @@ function App({ navigationItems }) {
     return (
         <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
             {/* Logo */}
-            <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-9">
-                <div className="">
+            <div className="max-w-screen-2xl flex flex-wrap items-center justify-around mx-auto p-2">
+                <div className="flex items-center">
                     <a href="/">
                         <img
-                            src="/logo-min.png"
-                            className="w-100 h-10 mr-2"
+                            src="/public/3034-logo-1739199303.648color-ffa6a6.svg"
+                            className="mr-2"
                             alt="Logo"
                             width={145}
                             height={40}
