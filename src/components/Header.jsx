@@ -26,7 +26,7 @@ function App({ navigationItems }) {
         <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
             {/* Logo */}
             <div className="max-w-screen-2xl flex flex-wrap items-center justify-around mx-auto p-2">
-                <div className="flex items-center">
+                <div className="flex items-center validateSpaceMobile">
                     <a href="/">
                         <img
                             src="/3034-logo-1739199303.648color-ffa6a6.svg"

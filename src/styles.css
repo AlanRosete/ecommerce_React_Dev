@@ -170,3 +170,12 @@ input[type="number"]::-webkit-inner-spin-button {
 .group:hover .hamburger-line {
   background-position: 100%;
 }
+
+/* Header Responsive Mobile IMG Only Media Query OK */
+
+@media screen and (max-width: 491px) {
+    .validateSpaceMobile {
+        width: 100px;
+        height: 100px;
+    }
+}
